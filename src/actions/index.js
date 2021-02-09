@@ -1,5 +1,4 @@
-const reducer = (state, action) => {
-    return state;
-}
-
-export default reducer;
+export const setFavorite = payload => ({
+    type: 'SET_FAVORITE',
+    payload,
+});
