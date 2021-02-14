@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { registerRequest } from '../actions';
+
 import '../assets/styles/components/Register.scss';
 
 
-const Register = () => {
+const Register = props => {
     const [ form, setValues ] = useState({
        email: '',
        name: '',
@@ -21,7 +24,8 @@ const Register = () => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        console.log(form)
+        props.registerRequest(form);
+        props.history.push('/');
     }
 
     return (
@@ -50,7 +54,7 @@ const Register = () => {
                         placeholder='Contraseña' 
                         onChange={handleInput}
                     />
-                    <button className='button'>Registrarme</button>
+                    <button className='submit'>Registrarme</button>
                 </form>
                 <Link to='/login'>Iniciar sesión</Link>
             </section>
@@ -58,4 +62,8 @@ const Register = () => {
     );
 }
 
-export default Register;
+const mapDispatchToProps = {
+    registerRequest,
+}
+
+export default connect(null, mapDispatchToProps)(Register);
