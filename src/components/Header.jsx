@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+
+import { logoutRequest } from '../actions/';
 
 import gravatar from '../utils/gravatar';
 
@@ -14,6 +17,10 @@ const Header = props => {
   const { user } = props;
 
   const hasUser = Object.keys(user).length > 0;
+
+  const handleLogout = () => {
+    props.logoutRequest({});
+  }
 
   return (
     <header className="header">
@@ -31,18 +38,40 @@ const Header = props => {
           <p>Perfil</p>
         </div>
         <ul>
-          <li><Link to="/">Cuenta</Link></li>
-          <li><Link to="/">Cerrar Sesión</Link></li>
+        
+          {
+            hasUser ?
+              <li><Link to="/">{user.name}</Link></li> 
+            :
+              null
+          }
+          
+          {
+            hasUser ?
+              <li><a href="#logout" onClick={handleLogout}>Cerrar Sesión</a></li>
+            :
+              <li><Link to="/login">Iniciar sesión</Link></li>
+          }
+
         </ul>
       </div>
     </header>
   );
 }
 
+Header.propTypes = {
+  user: propTypes.object,
+  logoutRequest: propTypes.func.isRequired,
+}
+
 const mapStateToProps = state => {
   return {
     user: state.user
-  }
+  };
 }
 
-export default connect(mapStateToProps, null)(Header);
+const mapDispatchToProps = {
+  logoutRequest,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
