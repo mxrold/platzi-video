@@ -6,8 +6,8 @@ import '../assets/styles/components/NotFoundMessage.scss';
 
 
 const NotFoundMessage = () => (
-    <section class="error">
-        <h2 class="animated pulse">404</h2>
+    <section className="error">
+        <h2 className="animated pulse">404</h2>
         <p>Page Not Found</p>
         <Link to="#">Back Home</Link>
     </section>

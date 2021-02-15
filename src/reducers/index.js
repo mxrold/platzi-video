@@ -4,6 +4,7 @@ import {
     LOGIN_REQUEST, 
     LOGOUT_REQUEST,
     REGISTER_REQUEST,
+    GET_VIDEOS_SOURCE,
 } from '../actions/actionTypes';
 
 
@@ -33,6 +34,13 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.payload,
+            }
+        case GET_VIDEOS_SOURCE:
+            return {
+                ...state,
+                playing: state.trends.find(item => item.id === Number(action.payload))
+                || state.original.find(item => item.id === Number(action.payload))
+                || []
             }
 
         default:

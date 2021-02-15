@@ -4,6 +4,7 @@ import {
     LOGIN_REQUEST,
     LOGOUT_REQUEST,
     REGISTER_REQUEST,
+    GET_VIDEOS_SOURCE,
 } from './actionTypes';
 
 
@@ -29,5 +30,10 @@ export const logoutRequest = payload => ({
 
 export const registerRequest = payload => ({
     type: REGISTER_REQUEST,
+    payload,
+});
+
+export const getVideosSource = payload => ({
+    type: GET_VIDEOS_SOURCE,
     payload,
 });
