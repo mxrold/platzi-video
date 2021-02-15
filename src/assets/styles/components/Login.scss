@@ -18,7 +18,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 60px 68px 40px;
+    padding: 60px 60px 40px;
+    width: 100%;
+    max-width: 480px;
   }
   
   .login__container--form {
@@ -51,7 +53,7 @@
     align-items: center;
     display: flex;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin: 14px 0;
   }
   
   .login__container--social-media > div > img {
@@ -60,6 +62,8 @@
   }
   
   .login__container--register {
+    display: flex;
+    justify-content: space-around;
     font-size: 14px;
   }
   
@@ -72,4 +76,18 @@
   
   .login__container--register a:hover {
     text-decoration: underline;
+  }
+
+  .submit {
+    background-color: rgba(255, 255, 255, .3);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0;
   }

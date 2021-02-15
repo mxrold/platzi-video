@@ -18,6 +18,8 @@
       flex-direction: column;
       justify-content: space-around;
       padding: 60px 68px 40px;
+      width: 100%;
+      max-width: 480px;
   
       a {
         color: white;
@@ -38,3 +40,17 @@
     }
   
   }
+
+.submit {
+  background-color: rgba(255, 255, 255, .3);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Muli', sans-serif;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
