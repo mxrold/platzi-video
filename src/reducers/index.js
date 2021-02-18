@@ -5,6 +5,7 @@ import {
     LOGOUT_REQUEST,
     REGISTER_REQUEST,
     GET_VIDEOS_SOURCE,
+    GET_VIDEOS_SEARCH
 } from '../actions/actionTypes';
 
 
@@ -42,7 +43,20 @@ const reducer = (state, action) => {
                 || state.original.find(item => item.id === Number(action.payload))
                 || []
             }
+        case GET_VIDEOS_SEARCH: 
+            if(action.payload === "") {
+                return {
+                    ...state,
+                    searchVideos: []
+                };
+            }
 
+            const lists = [...state.trends, ...state.originals];
+            return {
+                ...state,
+                searchVideos: lists.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase())) || []
+            }
+        
         default:
             return state;
     }

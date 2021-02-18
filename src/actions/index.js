@@ -5,6 +5,7 @@ import {
     LOGOUT_REQUEST,
     REGISTER_REQUEST,
     GET_VIDEOS_SOURCE,
+    GET_VIDEOS_SEARCH
 } from './actionTypes';
 
 
@@ -35,5 +36,10 @@ export const registerRequest = payload => ({
 
 export const getVideosSource = payload => ({
     type: GET_VIDEOS_SOURCE,
+    payload,
+});
+
+export const getVideosSearch = payload => ({
+    type: GET_VIDEOS_SEARCH,
     payload,
 });
