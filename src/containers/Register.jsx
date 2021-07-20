@@ -28,6 +28,10 @@ const Register = props => {
         props.history.push('/');
     }
 
+    const handlePushHome = () => {
+        props.history.push('/')
+    }
+
     return (
         <section className='register'>
             <section className='register__container'>
@@ -54,7 +58,7 @@ const Register = props => {
                         placeholder='Contraseña' 
                         onChange={handleInput}
                     />
-                    <button className='submit'>Registrarme</button>
+                    <button onClick={handlePushHome} className='submit'>Registrarme</button>
                 </form>
                 <Link to='/login'>Iniciar sesión</Link>
             </section>

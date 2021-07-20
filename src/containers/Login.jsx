@@ -29,6 +29,10 @@ const Login = props => {
         props.history.push('/');
     }
 
+    const handlePushHome = () => {
+        props.history.push('/')
+    }
+
     return (
         <section className="login">
             <section className="login__container">
@@ -48,7 +52,7 @@ const Login = props => {
                     placeholder="Contraseña"
                     onChange={handleInput}
                 />
-                <button className="submit">Iniciar sesión</button>
+                <button onClick={handlePushHome} className="submit">Iniciar sesión</button>
                 <div className="login__container--remember-me">
                 <label>
                     <input type="checkbox" id="cbox1" value="first_checkbox" />Recuérdame
