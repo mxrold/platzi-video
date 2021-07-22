@@ -1,6 +1,6 @@
 # PlatziVideo
 
-Javascript study path project in Platzi. In this case, it is part of the frontend interface and will be followed by a backend to complete the project.
+Javascript study path project in Platzi to watch online videos. In this case, it is part of the frontend interface and will be followed by a backend to complete the project.
 
 ## Preview 🖼
 
